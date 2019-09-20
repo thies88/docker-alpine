@@ -24,7 +24,7 @@ build() {
 	local rootfs
 	rootfs="$(mktemp -d "${TMPDIR:-/var/tmp}/alpine-docker-rootfs-XXXXXXXXXX")"
 
-	# conf
+	# create /etc/apk/repositories and add community and TAGS: @edge and @testing
 	mkdir -p "$rootfs/etc/apk"
 	{
 		echo "$mirror/$rel/main"
@@ -35,7 +35,7 @@ build() {
 		}
 	} > "$rootfs/etc/apk/repositories"
 
-	# mkbase
+	# mkbase, add rootfs to container
 	{
 		# shellcheck disable=SC2086
 		apk --root "$rootfs" --update-cache --keys-dir /etc/apk/keys \
