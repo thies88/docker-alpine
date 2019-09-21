@@ -35,7 +35,7 @@ build() {
 		}
 	} > "$rootfs/etc/apk/repositories"
 
-	# mkbase, add rootfs to container
+	# mkbase: create base system by downloading alpine-base to later add it to our base-image
 	{
 		# shellcheck disable=SC2086
 		apk --root "$rootfs" --update-cache --keys-dir /etc/apk/keys \
@@ -64,6 +64,7 @@ build() {
 	return 0
 }
 
+#declair vars in array, this array contains the parameters wich the build command can use to create our base
 main() {
 	while getopts "hr:m:t:sEecdp:ba:" opt; do
 		case $opt in
