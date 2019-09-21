@@ -24,7 +24,7 @@ build() {
 	local rootfs
 	rootfs="$(mktemp -d "${TMPDIR:-/var/tmp}/alpine-docker-rootfs-XXXXXXXXXX")"
 
-	# create /etc/apk/repositories and add community and TAGS: @edge and @testing
+	# create /etc/apk/repositories and add community repo and add TAGS: @edge and @testing
 	mkdir -p "$rootfs/etc/apk"
 	{
 		echo "$mirror/$rel/main"
