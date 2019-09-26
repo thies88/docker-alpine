@@ -5,8 +5,8 @@
 # Changes were inspired by work done by Eivind Uggedal (uggedal) and
 # Luis Lavena (luislavena).
 
-#declare REL="${REL:-edge}"
-#declare MIRROR="${MIRROR:-http://nl.alpinelinux.org/alpine}"
+declare REL="${REL:-edge}"
+declare MIRROR="${MIRROR:-http://nl.alpinelinux.org/alpine}"
 
 set -eo pipefail; [[ "$TRACE" ]] && set -x
 
@@ -83,8 +83,7 @@ main() {
 		esac
 	done
 
-	#build "$MIRROR" "$REL" "$PACKAGES" "$ARCH"
-	usage "$MIRROR" "$REL" "$PACKAGES" "$ARCH"
+	build "$MIRROR" "$REL" "$PACKAGES" "$ARCH"
 }
 
 main "$@"
