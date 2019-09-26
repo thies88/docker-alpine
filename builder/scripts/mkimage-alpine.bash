@@ -5,8 +5,8 @@
 # Changes were inspired by work done by Eivind Uggedal (uggedal) and
 # Luis Lavena (luislavena).
 
-declare REL="${REL:-edge}"
-declare MIRROR="${MIRROR:-http://nl.alpinelinux.org/alpine}"
+#declare REL="${REL:-edge}"
+#declare MIRROR="${MIRROR:-http://nl.alpinelinux.org/alpine}"
 
 set -eo pipefail; [[ "$TRACE" ]] && set -x
 
@@ -79,7 +79,7 @@ main() {
 			b) ADD_BASELAYOUT=1;;
 			d) DISABLE_ROOT_PASSWD=1;;
 			a) ARCH="$OPTARG";;
-			*) usage1;;
+			*) usage=1;;
 		esac
 	done
 
