@@ -3,7 +3,7 @@
 # This mkimage-alpine.sh is a modified version from
 # https://github.com/docker/docker/blob/master/contrib/mkimage-alpine.sh.
 # Changes were inspired by work done by Eivind Uggedal (uggedal) and
-# Luis Lavena (luislavena). test
+# Luis Lavena (luislavena).
 
 declare REL="${REL:-edge}"
 declare MIRROR="${MIRROR:-http://nl.alpinelinux.org/alpine}"
@@ -79,7 +79,7 @@ main() {
 			b) ADD_BASELAYOUT=1;;
 			d) DISABLE_ROOT_PASSWD=1;;
 			a) ARCH="$OPTARG";;
-			*) usage;;
+			*) usage1;;
 		esac
 	done
 
