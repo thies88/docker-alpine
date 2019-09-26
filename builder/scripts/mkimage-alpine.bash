@@ -35,7 +35,7 @@ build() {
 		}
 	} > "$rootfs/etc/apk/repositories"
 
-	# mkbase: create base system by downloading alpine-base to later add it to our base-image
+	# mkbase: 1 create base system by downloading alpine-base to later add it to our base-image
 	{
 		# shellcheck disable=SC2086
 		apk --root "$rootfs" --update-cache --keys-dir /etc/apk/keys \
