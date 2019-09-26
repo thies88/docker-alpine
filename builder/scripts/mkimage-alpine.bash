@@ -83,7 +83,8 @@ main() {
 		esac
 	done
 
-	build "$MIRROR" "$REL" "$PACKAGES" "$ARCH"
+	#build "$MIRROR" "$REL" "$PACKAGES" "$ARCH"
+	usage "$MIRROR" "$REL" "$PACKAGES" "$ARCH"
 }
 
 main "$@"
