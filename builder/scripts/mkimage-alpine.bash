@@ -76,7 +76,7 @@ main() {
 			t) TIMEZONE="$OPTARG";;
 			c) ADD_APK_SCRIPT=1;;
 			p) PACKAGES="$OPTARG";;
-			b) ADD_BASELAYOUT=;;
+			b) ADD_BASELAYOUT=1;;
 			d) DISABLE_ROOT_PASSWD=1;;
 			a) ARCH="$OPTARG";;
 			*) usage=1;;
